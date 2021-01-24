@@ -40,3 +40,32 @@
 //     return longestName
 // }
 // console.log(longestCountryName(['vietnam', 'lao', 'chingchong']))
+
+
+class Person {
+    constructor(name, age){
+        this.name = name
+        this.age = age
+    }
+
+    greeting() {
+        return `${this.name} ${this.age}`
+    }
+}
+
+const hoang = new Person('Hoang', 16)
+console.log(hoang.greeting());
+
+
+class Vietnamese extends Person {
+    constructor(nationality) {
+        super();
+        this.nationality = nationality
+    }
+
+    xin_chao(){
+        return `${this.name} ${this.age} ${this.nationality}`
+    }
+}
+const vietnam = new Vietnamese('vietnam')
+console.log(vietnam.xin_chao());
