@@ -22,6 +22,25 @@
 //     }
 //     return longestWord
 // }
+// console.log(longestCountryName(['vietnam', 'lao', 'chingchong']))
+
+
+// class Person {
+//     constructor(name, age){
+//         this.name = name
+//         this.age = age
+//     }
+
+//     greeting() {
+//         return `${this.name} ${this.age}`
+//     }
+// }
+
+// const hoang = new Person('Hoang', 16)
+// console.log(hoang.greeting());
+
+
+// }
 
 // console.log(findLongestWord('mindx js intensive'));
 
@@ -38,34 +57,65 @@
 //         }
 //     }
 //     return longestName
+// class Vietnamese extends Person {
+//     constructor(nationality) {
+//         super();
+//         this.nationality = nationality
+//     }
+
+//     xin_chao(){
+//         return `${this.name} ${this.age} ${this.nationality}`
+//     }
 // }
-// console.log(longestCountryName(['vietnam', 'lao', 'chingchong']))
+// const vietnam = new Vietnamese('vietnam')
+// console.log(vietnam.xin_chao());
 
 
-class Person {
-    constructor(name, age){
+class Book {
+    constructor(name, price, publishedDay) {
+        this.id = uuid.v4()
         this.name = name
-        this.age = age
+        this.price = price
+        this.publishedDay = publishedDay
     }
+    
+}
 
-    greeting() {
-        return `${this.name} ${this.age}`
+class BookShelf {
+    constructor(name, owner, dateModified){
+        this.name = name
+        this.owner = owner
+        this.date = dateModified
+        this.books = []
+    }
+    add(book) {
+        if(book instanceof Book) {
+            this.books.push(book)
+        }
+    }
+    updateBook(id, data) {
+        for(let book of this.books){
+            if(book.id === id){
+                book.update(data)
+                break
+            }
+        }
+    }
+    deleteBook(id) {
+        for(let i = 0; i < this.books.length; i++){
+            if(this.books[i].id = id){
+                this.books.splice(i, 1)
+            }
+        }
+    }
+    showBooks(name) {
+        for(let i = 0; i < this.books.length; i++){
+            if(this.books[i].name = name){
+                console.log(this.books[i].name);
+            }
+        }
     }
 }
 
-const hoang = new Person('Hoang', 16)
-console.log(hoang.greeting());
-
-
-class Vietnamese extends Person {
-    constructor(nationality) {
-        super();
-        this.nationality = nationality
-    }
-
-    xin_chao(){
-        return `${this.name} ${this.age} ${this.nationality}`
-    }
-}
-const vietnam = new Vietnamese('vietnam')
-console.log(vietnam.xin_chao());
+// Music : id song singer artist
+// VpopMusic, US Uk, Kpop, Libraries:owner, id, quantity, Views(tat ca thong tin), ViewDetail(ten cac bai hat)
