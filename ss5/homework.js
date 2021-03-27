@@ -9,9 +9,9 @@ class MyBook extends HTMLElement {
                             </div>
                             
                           <div id="container"></div>
-                          <hr>
-                          <footer> <h1>DESCRIPTIONS</h1>
-                                   <p>There is no descriptions</p>
+                          
+                          <footer> <h1>Made by Hoang</h1>
+                                   
                             </footer> `
     }
 }
@@ -66,10 +66,38 @@ class Libraries {
         for(let i = 0; i < this.data.length; i++) {
             btn_delete.addEventListener('click', () => {
                 if(this.data[i].name === deleteTerm.value) {
-                    item[i].style.display = 'none'
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.5'
+                    }, 200)
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.4'
+                    }, 400)
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.3'
+                    }, 600)
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.2'
+                    }, 800)
+                    setTimeout(function() {
+                        item[i].style.display = 'none'
+                    }, 1000)
                 }
                 else if(this.data[i].id === deleteTerm.value) {
-                    item[i].style.display = 'none'
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.5'
+                    }, 200)
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.4'
+                    }, 400)
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.3'
+                    }, 600)
+                    setTimeout(function() {
+                        item[i].style.opacity = '0.2'
+                    }, 800)
+                    setTimeout(function() {
+                        item[i].style.display = 'none'
+                    }, 1000)
                 }
             })
         }
@@ -96,33 +124,27 @@ class MyCss extends HTMLElement {
         this.attachShadow({ mode: 'open' })
         this.innerHTML = `<style>
                             body,html {
-                                background-color: whitesmoke;
+                                
+
                                 height: 100%;
+                                margin: 0;
                             }
                             
                             #nav{
-                                display: grid;
-                                width: 100%;
-                                height: 65px;
-                                background-color: white;
+                                padding: 5px;
+                                text-align: center;
+                                background: black;
+                                color: black;
+                                font-size: 20px;
+                                
                             }
                             #nav h1{
-                                text-align: center;
-                                align-item: center;
-                                font-family: cursive;
-                                animation: change 2s infinite;
+                                color: #D0F8FF;
+                                text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+                                             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+                                             0 0 40px #A5F1FF;
                             }
-                            @keyframes change {
-                                0% {
-                                    color: rgb(236, 81, 75);
-                                }
-                                50% {
-                                    color: rgb(160, 202, 81);
-                                }
-                                100% {
-                                    color: rgb(247, 192, 92);
-                                }
-                            }
+                            
                             #delete {
                                 display: flex;
                                 width: 100%;
@@ -144,12 +166,20 @@ class MyCss extends HTMLElement {
                             .item img{
                                 width: 230px;
                                 height: 240px;
+                                
                             }
                             .item h3 {
                                 text-align: center;
+                                
                             }
                             footer {
-                                height: 150px;
+                                height: 130px;
+                                background-color: black;
+                            }
+                            footer h1{
+                                text-align: center;
+                                font-size: 50px;
+                                color: white;
                             }
                         </style>`
     }
