@@ -1,8 +1,7 @@
 
 class MyBook extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div id="nav"><h1>MyBook</h1>
-                            </div>
+        this.innerHTML = `<div id="nav"><h1>MyBook</h1></div>
                             <div id="delete">
                                 <input type="text" id="deleteTerm" placeholder="Enter name or id to delete">
                                 <button id="btn_delete">Delete</button>
@@ -157,3 +156,4 @@ class MyCss extends HTMLElement {
 customElements.define('my-css', MyCss)
 
 libraries.delete()
+
