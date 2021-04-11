@@ -1,0 +1,53 @@
+#menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: red;
+    
+    padding: 10px;
+}
+.menu_item a{
+    color: yellow;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+}
+.comic-container {
+    width: 300px;
+    margin-top: 2px;
+}
+
+.comic-container .comic-image {
+    width: 100%;
+    height: 400px;
+    background-image: url('https://phegame.net/wp-content/uploads/2019/10/tuong-khac-che-yasuo.jpg');
+    background-size: 100% 100%;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comic-container .comic-name {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+.comic-container .comic-new-chapter {
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.comic-container .comic-release, .comic-hot {
+    padding: 10px;
+    background-color: rgba(93, 255, 255, 0.863);
+    color: #ffffff;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.comic-container .comic-hot {
+    background-color: rgba(248, 45, 9, 0.973);
+}

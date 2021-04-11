@@ -11,3 +11,5 @@ Arrow function
 for (of) , forEach, for
 
 setTimeout, css opacity transition
+
+life cycle of web component
