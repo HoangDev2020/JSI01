@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/auth-form.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCR4CJzhDMNRDhbw-heVFPYF12QtTcoNtc",
+            authDomain: "jsi01-c37c4.firebaseapp.com",
+            projectId: "jsi01-c37c4",
+            storageBucket: "jsi01-c37c4.appspot.com",
+            messagingSenderId: "865802843998",
+            appId: "1:865802843998:web:7c88cfbfbea548a9cdc1cf"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 
 </head>
+
 <body>
     <main-menu></main-menu>
     <div class="content">
-        <comic-container name="Naruto" image="link" new-chapter="500" release="2000"></comic-container>
-        <comic-container></comic-container>
-        <comic-container></comic-container>
-        <comic-container></comic-container>
-        <comic-container></comic-container>
+       <register-form></register-form>
     </div>
 
-    <script src="./js/app.js" type="module"></script>    
+    <script src="./js/app.js" type="module"></script>
 </body>
+
 </html>

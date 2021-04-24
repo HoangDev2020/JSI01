@@ -42,6 +42,13 @@ export default class ComicContainer extends HTMLElement {
             this.release.innerHTML = newValue
         }
     }
+
+    connectedCallback() {
+        console.log("first appear");
+    }
+    disconnectedCallback() {
+        console.log("deleted from web");
+    }
 }
 
 window.customElements.define('comic-container', ComicContainer)
