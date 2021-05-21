@@ -19,3 +19,16 @@ import data from "./data.js"
 // }
 
 // showComics(data, $content)
+
+function test() {
+    try {
+        console.log("get data");
+        throw new Error("Cannot get the data")
+        console.log("xu li data");
+    } catch(error) {
+        console.log("Has one bug is: " + error.message);
+    }
+
+    console.log("show screen(bat buoc)");
+}
+test()

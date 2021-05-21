@@ -1,3 +1,5 @@
+import {register} from "../models/user.js"
+
 const $template = document.createElement('template')
 $template.innerHTML = `
     <form class="register-form auth-form">
@@ -25,7 +27,7 @@ $template.innerHTML = `
         </div>
         <div class="input-wrapper">
             <button id="btn_register" class="btn">Register</button>
-            <button id="btn_sign_in" class="btn">Sign in</button>
+            
     </form>
 `
 
@@ -33,6 +35,68 @@ export default class RegisterForm extends HTMLElement {
     constructor() {
         super()
         this.appendChild($template.content.cloneNode(true))
+        this.$registerform = this.querySelector('.register-form')
+
+        this.$name = this.querySelector('#name')
+        this.$email = this.querySelector('#email')
+        this.$password = this.querySelector('#password')
+        this.$passwordConfirmation = this.querySelector('#password-confirmation')
+
+        this.$nameError = this.querySelector('#name-error')
+        this.$emailError = this.querySelector('#email-error')
+        this.$passwordError = this.querySelector('#password-error')
+        this.$passwordConfirmationError = this.querySelector('#password-confirmation-error')
+    }
+    connectedCallback() {
+        this.$registerform.onsubmit = (event) => {
+            event.preventDefault()
+
+            if(this.validate()) {
+                register({
+                    name: this.$name.value.trim(), 
+                    email: this.$email.value.trim(), 
+                    password: this.$password.value
+                }, () => {
+                    alert("Create account succeesfully")
+                }, (error) => {
+                    alert(error.message)
+                })
+                
+            }
+        }
+    }
+
+    validate() {
+        let isPassed = true
+        if(this.$name.value.trim() == '') {
+            this.$nameError.textContent = "Please enter your name"
+            isPassed = false
+        } else {
+            this.$nameError.innerHTML = ""
+        }
+        if(this.$email.value.trim() == '') {
+            this.$emailError.textContent = "Please enter your name"
+            isPassed = false
+        } else {
+            this.$emailError.innerHTML = ""
+        }
+        if(this.$password.value == '') {
+            this.$passwordError.textContent = "Please enter your name"
+            isPassed = false
+        } else {
+            this.$passwordError.innerHTML = ""
+        }
+        if(this.$passwordConfirmation.value == '') {
+            this.$passwordConfirmationError.textContent = "Please enter your name"
+            isPassed = false
+        } else if(this.$password.value != this.$passwordConfirmation.value) {
+            this.$passwordConfirmationError.innerHTML = "Your password is bot correct"
+            isPassed = false
+        }
+        else {
+           this.$passwordConfirmationError.innerHTML = ""
+       }
+       return isPassed
     }
 }
 
